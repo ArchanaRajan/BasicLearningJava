@@ -1,0 +1,33 @@
+public class BinarySearch 
+{
+	public boolean search(int[] arr, int num)
+	{
+		int startIndex = 0;
+		int lastIndex = arr.length - 1;
+		
+		//while(startIndex <= lastIndex)
+		for( ; startIndex <= lastIndex;)
+		{
+			int middle = (startIndex + lastIndex)/2;
+		
+			if(arr[middle] == num)
+				return true;
+			else if(arr[middle] < num)
+				startIndex = middle + 1;
+			else 
+				lastIndex = middle - 1;
+		}
+		
+		return false;
+	}
+	
+	public static void main(String[] args)
+	{
+		BinarySearch bs = new BinarySearch();
+		int[] arr =  {-2, 4, 7, 9, 11};
+		boolean search = bs.search(arr, 11);
+		System.out.println("Search Value : "+search);
+
+	}
+
+}
